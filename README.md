@@ -25,7 +25,7 @@ This function is under development, but you are encouraged to contribute to it.
 
 ### Reorganize assignments _(experimental)_
 Assignments on 163-MOOC are by default in chronological order.  
-MOOC-wizard can reorganize them, by pinning the assignments that are about to expire, and list the passed things behind.  
+MOOC-wizard can reorganize them, by pinning the assignments that are about to expire, and listing the passed things behind.  
 <br>
 
 ## Download and install
