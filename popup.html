@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .button {
+        display: inline-block;
+        border-radius: 4px;
+        background-color: #4CAF50;
+        border: none;
+        outline: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 28px;
+        padding: 20px;
+        width: 200px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+      }
+
+      .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+
+      .button span:after {
+        content: '!';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -7px;
+        transition: 0.5s;
+      }
+
+      .button:hover span {
+        padding-right: 10px;
+      }
+
+      .button:hover span:after {
+        opacity: 1;
+        right: 0px;
+      }
+      .button:active {
+        background: #2C8F30;
+      }
+      p {
+        color: gray;
+        text-align: center;
+        font-size: 10px;
+      }
+      label {
+        color: gray;
+        vertical-align: inherit; 
+        font-size: 14px;
+      }
+      .unselectable {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      .underDev {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="button" id="evaluate"><span id="span">evaluate</span></button>
+    <p>&nbsp;</p>
+    <div class="unselectable">
+      <input type="checkbox" id="check1" name="check1" value="auto-e">
+      <label for="check1"> evaluate automatically</label><br>
+      <input type="checkbox" id="check2" name="check2" value="filt-e">
+      <label for="check2"> hide useless elements^</label><br>
+      <input type="checkbox" id="check3" name="check3" value="smls-v" disabled="true" class="underDev">
+      <label for="check3" class="underDev"> seemless video playing*</label><br>
+      <input type="checkbox" id="check4" name="check4" value="hide-s">
+      <label for="check4"> reorganize assignments^</label>
+    </div>
+    <p>&nbsp;</p>
+    <p class="unselectable"><i>^: experimental
+    <br>*: under development</i>
+    <br>MOOC wizard 0.2.0 pre alpha</p>
+    <script src="popup.js"></script>
+  </body>
+</html>
