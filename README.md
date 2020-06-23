@@ -19,7 +19,7 @@ When **evaluate automatically** is on, once you enter the evaluation page, evalu
 With MOOC-wizard, the 163-MOOC webpage will be nice and clean.  
 <br>
 
-### Seemless video playing (under development)
+### Seamless video playing (under development)
 This function is under development, but you are encouraged to contribute to it.  
 <br>
 
