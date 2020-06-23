@@ -5,7 +5,7 @@
 
 ## Functions
 _in the latest version: 0.2.0\_alpha_  
-<img src="pictures/capture_1.png" width="300" alt="The user interfaces of MOOC-wizard. A button and a few checkboxes are shown. "><br>
+<img src="pictures/capture_interface.png" width="300" alt="The user interfaces of MOOC-wizard. A button and a few checkboxes are shown. "><br>
 <sub><sup>It's not in the evaluation page, so the button is disabled. </sup></sub>
 <br>
 
