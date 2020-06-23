@@ -100,6 +100,7 @@ function allBlocked () {
 //independent home blocker with customized timer
 function blockHome (timer){
 	block();
+	console.log("block home");
 	window.scrollTo(0,document.body.scrollHeight);
 	setTimeout(function(){
 		if(!allBlocked())blockHome(timer);
@@ -119,10 +120,9 @@ setTimeout(function(){
 	block();
 	
 	if(document.URL.endsWith("www.icourse163.org/")){
-		blockHome(1);
+		blockHome(10);
 		blockHome(100);
-		blockHome(1000);
-		blockHome(2000);
+		blockHome(200);
 	}
 	
-},5);
+},100);

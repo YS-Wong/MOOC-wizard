@@ -25,8 +25,7 @@ function load() {
 }
 
 function sync() {
-//  alert('sync! evaluated = '+evaluated);
-  if(evaluated){
+  if (evaluated){
     evaluate.disabled = evaluated;
     evaluate.style = 'opacity: 0.6; cursor: not-allowed; transition: 0s; disabled: true';
     span.style = 'opacity: 0.6; cursor: not-allowed; disabled: true';
@@ -42,7 +41,7 @@ function savePrefs() {
 }
 
 evaluate.onclick = function() {
-  if(!evaluated){
+  if (!evaluated){
     chrome.tabs.executeScript({file: 'scripts/Evaluate.js'});
     evaluated = true;
   }
@@ -50,7 +49,7 @@ evaluate.onclick = function() {
 };
 
 check1.onclick = function () {
-  if(!evaluated && check1.checked){
+  if (!evaluated && check1.checked){
     chrome.tabs.executeScript({file: 'scripts/Evaluate.js'});
     evaluated = true;
   }
@@ -59,7 +58,7 @@ check1.onclick = function () {
 }
 
 check2.onclick = function () {
-  if(check2.checked){
+  if (check2.checked){
     chrome.tabs.executeScript({file: 'scripts/Block.js'});
   }else{
     chrome.tabs.executeScript({file: 'scripts/Block_undo.js'});
@@ -69,8 +68,10 @@ check2.onclick = function () {
 }
 
 check4.onclick = function () {
-  if(check4.checked){
+  if (check4.checked){
     chrome.tabs.executeScript({file: 'scripts/Reorg.js'});
+  }else{
+    chrome.tabs.executeScript({file: 'scripts/Reorg_undo.js'});
   }
   savePrefs();
   sync();

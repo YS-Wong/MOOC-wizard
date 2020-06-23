@@ -21,23 +21,21 @@ function optiPage (){
         chrome.storage.sync.get({check2: false, check4: false}, 
           function(prefs) {
             
-            setTimeout(function(){
-              //block things
-              if (prefs.check2){
-                chrome.tabs.executeScript({file: 'scripts/Block.js'});
-              }else if (!prefs.check2){
-                chrome.tabs.executeScript({file: 'scripts/Block_undo.js'});
-              }
-            },100);
+            //block things
+            if (prefs.check2){
+              chrome.tabs.executeScript({file: 'scripts/Block.js'});
+            }else if (!prefs.check2){
+              chrome.tabs.executeScript({file: 'scripts/Block_undo.js'});
+            }
             
-            setTimeout(function(){
-              //reorganize things
-              if (tabs[0].url.includes('testlist')){
-                if (prefs.check4){
-                  chrome.tabs.executeScript({file: 'scripts/Reorg.js'});
-                }
+            //reorganize things
+            if (tabs[0].url.includes('testlist')){
+              if (prefs.check4){
+                chrome.tabs.executeScript({file: 'scripts/Reorg.js'});
+              }else if (!prefs.check4){
+                chrome.tabs.executeScript({file: 'scripts/Reorg_undo.js'});
               }
-            },1000);
+            }
             
         });
       }
@@ -57,7 +55,7 @@ chrome.tabs.onActivated.addListener(optiPage);
 
 //listen to click from HWclick
 //and then ask the situation of the current page
-//and then start Evaluate.js
+//and then do something
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     
@@ -67,13 +65,23 @@ chrome.runtime.onMessage.addListener(
             if (response.value == 'unEVAed'){
               chrome.storage.sync.get({check1: false}, 
                 function(prefs) {
-                  if(prefs.check1){
+                  if (prefs.check1){
                     chrome.tabs.executeScript({file: 'scripts/Evaluate.js'});
                   }
-                });
+              });
             }
           });
         });
+      }else if (request.message == "TLclick"){
+        chrome.storage.sync.get({check4: false}, 
+          function(prefs) {
+            if (prefs.check4){
+              chrome.tabs.executeScript({file: 'scripts/Reorg.js'});
+            }else if (!prefs.check4){
+              chrome.tabs.executeScript({file: 'scripts/Reorg_undo.js'});
+            }
+        });
       }
     
-});
+  }
+);

@@ -1,30 +1,17 @@
-//for reorganize the assignment
+//undo reorganization
 
-//get current time
-var d = new Date();
-var month = d.getMonth()+1;
-if (month<10)month='0'+month;
-var date = d.getDate();
-if (date<10)date='0'+date;
-var hours = d.getHours();
-if (hours<10)hours='0'+hours;
-var minutes = d.getMinutes();
-if (minutes<10)minutes='0'+minutes;
-//"202006200137" for example
-var prsTM = d.getFullYear().toString().substr(2,2)+''+month+''+date+''+hours+''+minutes;
-
-//returns remaining time
-function remngTime (element) {
+//returns due time
+function dueTime (element) {
 	var inHL = element.innerHTML; 
 	var dueTM; 
 	if (!inHL.endsWith('</font>')){ //google web translation not involved
 		dueTM = inHL.substr(7,2)+inHL.substr(10,2)
 			+inHL.substr(13,2)+inHL.substr(16,2)+inHL.substr(19,2);
-		return dueTM - prsTM;
+		return dueTM;
 	}else if (inHL.endsWith('</font>')){ //opposite
 		dueTM = inHL.substr(7+78,2)+inHL.substr(10+78,2)
 			+inHL.substr(13+78,2)+inHL.substr(16+78,2)+inHL.substr(19+78,2);
-		return dueTM - prsTM;
+		return dueTM;
 	}
 }
 
@@ -35,19 +22,19 @@ var Assign  = document.getElementsByClassName('m-chapterQuizHwItem');
 
 if(Assign.length > 0){
 
-//store remngTime for each Assign
-var rTMtable = []; 
+//store dueTime for each Assign
+var dTMtable = []; 
 var args = 0;
 var args1 = 0;
 
-//make a rTMtable
+//make a dTMtable
 while (args < Assign.length){
-	rTMtable[args] = remngTime(dueTMtag[args1]);
+	dTMtable[args] = dueTime(dueTMtag[args1]);
 	args1++;
 	if (args1 < dueTMtag.length 
 		&& Assign[args].contains(dueTMtag[args1])){
-			if(rTMtable[args] > remngTime(dueTMtag[args1]))
-				rTMtable[args] = remngTime(dueTMtag[args1]);
+			if(dTMtable[args] > dueTime(dueTMtag[args1]))
+				dTMtable[args] = dueTime(dueTMtag[args1]);
 			args1++;
 	}
 	args++;
@@ -63,14 +50,10 @@ var args2 = 0;
 var args3 = 0;
 while (args2 < Assign.length - 1){
 	while (args3 < Assign.length - args2 -1){
-		if (
-			(rTMtable[args3]>0 && rTMtable[args3+1]>0 && rTMtable[args3]>rTMtable[args3+1])||
-			(rTMtable[args3]<0 && rTMtable[args3+1]<0 && rTMtable[args3]<rTMtable[args3+1])||
-			(rTMtable[args3]<0 && rTMtable[args3+1]>0)
-		){
-			var temp = rTMtable[args3];
-			rTMtable[args3] = rTMtable[args3+1];
-			rTMtable[args3+1] = temp; 
+		if (dTMtable[args3]>dTMtable[args3+1]){
+			var temp = dTMtable[args3];
+			dTMtable[args3] = dTMtable[args3+1];
+			dTMtable[args3+1] = temp; 
 			Assign[args3+1].parentNode.insertBefore(Assign[args3+1], Assign[args3]);
 		}
 		args3++;
