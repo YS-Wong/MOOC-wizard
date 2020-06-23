@@ -9,9 +9,9 @@ _in the latest version: 0.2.0\_alpha_
 <sub><sup>It's not in the evaluation page, so the button is disabled. </sup></sub>
 <br>
 
-### Evaluate! and evaluate automatically
+### Evaluate! _and_ evaluate automatically
 MOOC-wizard can help you to evaluate others' homework to save your time.  
-Click **Evaluate!** button to evaluate for a single time.  
+Click **evaluate!** button to evaluate for a single time.  
 When **evaluate automatically** is on, once you enter the evaluation page, evaluation will be done automatically.  
 <br>
 
