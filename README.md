@@ -15,15 +15,15 @@ Click **evaluate!** button to evaluate for a single time.
 When **evaluate automatically** is on, once you enter the evaluation page, evaluation will be done automatically.  
 <br>
 
-### Hide useless elements (experimental)
+### Hide useless elements _(experimental)_
 With MOOC-wizard, the 163-MOOC webpage will be nice and clean.  
 <br>
 
-### Seamless video playing (under development)
+### Seamless video playing _(under development)_
 This function is under development, but you are encouraged to contribute to it.  
 <br>
 
-### Reorganize assignments (experimental)
+### Reorganize assignments _(experimental)_
 Assignments on 163-MOOC are by default in chronological order.  
 MOOC-wizard can reorganize them, by pinning the assignments that are about to expire, and list the passed things behind.  
 <br>
