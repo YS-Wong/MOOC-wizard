@@ -4,7 +4,7 @@
 **Not meant to finish exam or homework for anyone, but committed to optimize your studying experience on 163-mooc.**
 
 ## Functions
-_in the latest version: 0.2.0_preview_alpha_  
+_in the latest version: 0.2.0\_alpha_  
 <img src="pictures/capture_1.png" width="300" alt="The user interfaces of MOOC-wizard. A button and a few checkboxes are shown. "><br>
 <sub><sup>It's not in the evaluation page, so the button is disabled. </sup></sub>
 <br>
@@ -30,6 +30,6 @@ MOOC-wizard can reorganize them, by pinning the assignments that are about to ex
 
 ## Download and install
 This extension is made without any attempt on profit.  
-To download the extension, please click here.  
-Don't know how to install? Search the Internet!  
+To download the extension, please click [here](https://github.com/YS-Wong/MOOC-wizard/tree/master/release "download links").  
+Don't know how to install? Search the Internet.  
 <br>
