@@ -5,6 +5,7 @@
 
 ## Functions
 (in the latest version: 0.2.0_preview_alpha)  
+<img src="pictures/capture_1.png" width="300">
 <br>
 
 ### Evaluate! and evaluate automatically
