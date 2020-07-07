@@ -30,6 +30,6 @@ MOOC-wizard can reorganize them, by pinning the assignments that are about to ex
 
 ## Download and install
 This extension is made without any attempt on profit.  
-To download the extension, please click [here](https://github.com/YS-Wong/MOOC-wizard/tree/master/release "download links").  
+To download the extension, please click [here](https://github.com/YS-Wong/MOOC-wizard/releases "download links").  
 Don't know how to install? Search the Internet.  
 <br>
