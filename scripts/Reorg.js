@@ -31,38 +31,52 @@ function remngTime (element) {
 setTimeout(function(){
 
 var dueTMtag  = document.getElementsByClassName('j-submitTime score f-fl');
-var Assign  = document.getElementsByClassName('m-chapterQuizHwItem');
+var evadueTMtag = document.getElementsByClassName('gray j-evalEnd');
+var assign  = document.getElementsByClassName('m-chapterQuizHwItem');
 
-if(Assign.length > 0){
+if(assign.length > 0){
 
 //store remngTime for each Assign
 var rTMtable = []; 
 var args = 0;
 var args1 = 0;
+var args11 = 0;
 
 //make a rTMtable
-while (args < Assign.length){
+while (args < assign.length){
 	rTMtable[args] = remngTime(dueTMtag[args1]);
 	args1++;
+	
 	if (args1 < dueTMtag.length 
-		&& Assign[args].contains(dueTMtag[args1])){
-			if(rTMtable[args] > remngTime(dueTMtag[args1]))
-				rTMtable[args] = remngTime(dueTMtag[args1]);
+		&& assign[args].contains(dueTMtag[args1])){
+			if (rTMtable[args] > remngTime(dueTMtag[args1])
+				&& remngTime(dueTMtag[args1]) >0)
+					rTMtable[args] = remngTime(dueTMtag[args1]);
 			args1++;
 	}
+	
+	if (args11 < evadueTMtag.length
+		&& assign[args].contains(evadueTMtag[args11])){
+		if (rTMtable[args] > remngTime(evadueTMtag[args11])
+			&& remngTime(dueTMtag[args1]) >0)
+				rTMtable[args] = remngTime(evadueTMtag[args11]);
+		args11++;
+	}
+	
 	args++;
 }
 
-//pT 6
-//dT 3 8 2 5 7 1
-//rT -3 2 -4 -1 1 -5
-//o-dT 7 8 5 3 2 1
-//o-rT 1 2 -1 -3 -4 -5
+//below is an example
+//current time 6
+//due time 3 8 2 5 7 1
+//remaining time -3 2 -4 -1 1 -5
+//due time in order 7 8 5 3 2 1
+//remaining time in order 1 2 -1 -3 -4 -5
 
 var args2 = 0;
 var args3 = 0;
-while (args2 < Assign.length - 1){
-	while (args3 < Assign.length - args2 -1){
+while (args2 < assign.length - 1){
+	while (args3 < assign.length - args2 -1){
 		if (
 			(rTMtable[args3]>0 && rTMtable[args3+1]>0 && rTMtable[args3]>rTMtable[args3+1])||
 			(rTMtable[args3]<0 && rTMtable[args3+1]<0 && rTMtable[args3]<rTMtable[args3+1])||
@@ -71,7 +85,7 @@ while (args2 < Assign.length - 1){
 			var temp = rTMtable[args3];
 			rTMtable[args3] = rTMtable[args3+1];
 			rTMtable[args3+1] = temp; 
-			Assign[args3+1].parentNode.insertBefore(Assign[args3+1], Assign[args3]);
+			assign[args3+1].parentNode.insertBefore(assign[args3+1], assign[args3]);
 		}
 		args3++;
 	}
