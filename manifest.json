@@ -1,6 +1,6 @@
 {
   "name": "MOOC wizard",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Not meant to finish exam or homework for anyone, but committed to optimize your studying experience on 163-mooc. ",
   "permissions": [
     "tabs", 
