@@ -4,7 +4,7 @@
 **Not meant to finish exam or homework for anyone, but committed to optimize your studying experience on 163-mooc.**
 
 ## Functions
-_in the latest version: 0.2.0\_alpha_  
+_in the latest version: 0.2.1\_alpha_  
 <img src="pictures/capture_interface_1.png" width="300" alt="The user interfaces of MOOC-wizard. A button and a few checkboxes are shown. "><br>
 <sub><sup>It's not in the evaluation page, so the button is disabled. </sup></sub>
 <br>
